@@ -15,8 +15,8 @@
 </template>
 
 <script>
-//引入字体  也可以在main.js中引入
-import '@/assets/style/iconfont.css'
+//引入字体  也可以在main.js中引入,全局使用
+// import '@/assets/style/iconfont.css'
 export default {
   name: 'homeHeader',
 
