@@ -1,16 +1,19 @@
 <template>
-  <div class="header">
-    <div class="header-back">
-        <span class="iconfont">&#xe641;</span>
+  <div class="header" :class="[showHeader]">
+  <div class="header-back" :class="[showBack]">
+    <span class="iconfont">&#xe641;</span>
+  </div>
+  <div class="header-search" :class="[showSearch]">
+    <span class="iconfont">&#xe688;</span>
+    上海海昌海洋公园
+  </div>
+  <router-link to="/location">
+    <div class="header-city" :class="[showCity]">
+      北京
+    <span class="iconfont">&#xe65d;</span>
     </div>
-    <div class="header-search">
-         <span class="iconfont">&#xe688;</span>
-         上海海昌海洋公园
-    </div>
-    <div class="header-city">
-         北京
-        <span class="iconfont">&#xe65d;</span>
-    </div>
+  </router-link>
+
   </div>
 </template>
 
@@ -19,6 +22,34 @@
 // import '@/assets/style/iconfont.css'
 export default {
   name: 'homeHeader',
+  data(){
+    return{
+      showHeader:'',
+      showBack:'',
+      showSearch:'',
+      showCity:''
+    }
+  },
+  methods:{
+    scrollChange(){
+      let height = document.documentElement.scrollTop
+      // console.log(height)
+      if(height>10){
+          this.showHeader='showHeader'
+          this.showBack='showBack'
+          this.showSearch='showSearch'
+          this.showCity='showCity'
+      }else{
+          this.showHeader=''
+          this.showBack=''
+          this.showSearch=''
+          this.showCity=''
+      }
+    }
+  },
+  mounted(){
+    window.addEventListener('scroll',this.scrollChange)
+  }
 
 }
 </script>
