@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <swiper :options="swiperOption">
-    <swiper-slide v-for="(item,key) in headerImg" :key="item.id"><img :src="item.imgUrl"></swiper-slide>
+    <swiper-slide v-for="(item,key) in swiperList" :key="item.id"><img :src="item.imgUrl"></swiper-slide>
 
     <div class="swiper-pagination"  slot="pagination"></div>
   </swiper>
@@ -15,7 +15,7 @@ export default {
   name: 'homeSwiper',
   data(){
     return {
-      headerImg:[
+      swiperList:[
         {
           id:1001,
           imgUrl:'https://pic5.40017.cn/03/000/d5/6b/rB5oQFx4846ATjD9AAMGEUvrZHQ915_520x218_00.jpg'
