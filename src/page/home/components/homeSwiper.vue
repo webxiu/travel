@@ -13,22 +13,25 @@
 import '@/assets/style/iconfont.css'
 export default {
   name: 'homeSwiper',
+  props:{
+    swiperList:Array
+  },
   data(){
     return {
-      swiperList:[
-        {
-          id:1001,
-          imgUrl:'https://pic5.40017.cn/03/000/d5/6b/rB5oQFx4846ATjD9AAMGEUvrZHQ915_520x218_00.jpg'
-        },
-        {
-          id:2002,
-          imgUrl:'https://pic5.40017.cn/03/000/28/73/rB5oQFxG7M2AOgxwAADChAKgVcA559_520x218_00.jpg'
-        },
-        {
-          id:20023,
-          imgUrl:'https://pic5.40017.cn/01/000/31/71/rBANC1sy7-iAaElXAADxiWL4LPo263_520x218_00.jpg'
-        },
-      ],
+      // swiperList:[
+      //   {
+      //     id:20045,
+      //     imgUrl:'https://pic5.40017.cn/03/000/d5/6b/rB5oQFx4846ATjD9AAMGEUvrZHQ915_520x218_00.jpg'
+      //   },
+      //   {
+      //     id:2002,
+      //     imgUrl:'https://pic5.40017.cn/03/000/28/73/rB5oQFxG7M2AOgxwAADChAKgVcA559_520x218_00.jpg'
+      //   },
+      //   {
+      //     id:20023,
+      //     imgUrl:'https://pic5.40017.cn/01/000/31/71/rBANC1sy7-iAaElXAADxiWL4LPo263_520x218_00.jpg'
+      //   },
+      // ],
       swiperOption:{
         pagination:'.swiper-pagination',
         loop:true

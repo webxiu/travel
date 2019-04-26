@@ -22,58 +22,61 @@
 // import '@/assets/style/iconfont.css'
 export default {
   name: 'homeCatalog',
+  props:{
+    iconList:Array
+  },
   data(){
     return{
-      iconList:[
-        {
-          id:54,
-          imgUrl:'https://pic5.40017.cn/01/000/84/4f/rBLkBVmLtaiAcmRaAAAEH9JbM6g234.png',
-          color:'orange',
-          desc:'本地热推'
-        },
-        {
-          id:85,
-          imgUrl:'https://pic5.40017.cn/02/001/6d/e2/rBLkCFmEG8eALBI8AAAEA1xXmqI793.png',
-          color:'green',
-          desc:'亲子游'
-        },
-        {
-          id:351,
-          imgUrl:'https://pic5.40017.cn/02/001/6d/db/rBLkCVmEGfeAVI4FAAAEXdabEDE534.png',
-          color:'blue',
-          desc:'温泉预售'
-        },
-        {
-          id:954,
-          imgUrl:'https://pic5.40017.cn/02/001/6d/e2/rBLkCFmEG8eALBI8AAAEA1xXmqI793.png',
-          color:'pink',
-          desc:'自然风光'
-        },
-        {
-          id:961,
-          imgUrl:'https://pic5.40017.cn/01/000/84/4f/rBLkBVmLtaiAcmRaAAAEH9JbM6g234.png',
-          color:'orange',
-          desc:'本地热推'
-        },
-        {
-          id:963,
-          imgUrl:'https://pic5.40017.cn/02/001/6d/e2/rBLkCFmEG8eALBI8AAAEA1xXmqI793.png',
-          color:'green',
-          desc:'亲子游'
-        },
-        {
-          id:2321,
-          imgUrl:'https://pic5.40017.cn/02/001/6d/db/rBLkCVmEGfeAVI4FAAAEXdabEDE534.png',
-          color:'blue',
-          desc:'温泉预售'
-        },
-        {
-          id:9520,
-          imgUrl:'https://pic5.40017.cn/02/001/6d/e2/rBLkCFmEG8eALBI8AAAEA1xXmqI793.png',
-          color:'pink',
-          desc:'自然风光'
-        },
-      ]
+      // iconList:[
+      //   {
+      //     id:54,
+      //     imgUrl:'https://pic5.40017.cn/01/000/84/4f/rBLkBVmLtaiAcmRaAAAEH9JbM6g234.png',
+      //     color:'orange',
+      //     desc:'本地热推'
+      //   },
+      //   {
+      //     id:85,
+      //     imgUrl:'https://pic5.40017.cn/02/001/6d/e2/rBLkCFmEG8eALBI8AAAEA1xXmqI793.png',
+      //     color:'green',
+      //     desc:'亲子游'
+      //   },
+      //   {
+      //     id:351,
+      //     imgUrl:'https://pic5.40017.cn/02/001/6d/db/rBLkCVmEGfeAVI4FAAAEXdabEDE534.png',
+      //     color:'blue',
+      //     desc:'温泉预售'
+      //   },
+      //   {
+      //     id:954,
+      //     imgUrl:'https://pic5.40017.cn/02/001/6d/e2/rBLkCFmEG8eALBI8AAAEA1xXmqI793.png',
+      //     color:'pink',
+      //     desc:'自然风光'
+      //   },
+      //   {
+      //     id:961,
+      //     imgUrl:'https://pic5.40017.cn/01/000/84/4f/rBLkBVmLtaiAcmRaAAAEH9JbM6g234.png',
+      //     color:'orange',
+      //     desc:'本地热推'
+      //   },
+      //   {
+      //     id:963,
+      //     imgUrl:'https://pic5.40017.cn/02/001/6d/e2/rBLkCFmEG8eALBI8AAAEA1xXmqI793.png',
+      //     color:'green',
+      //     desc:'亲子游'
+      //   },
+      //   {
+      //     id:2321,
+      //     imgUrl:'https://pic5.40017.cn/02/001/6d/db/rBLkCVmEGfeAVI4FAAAEXdabEDE534.png',
+      //     color:'blue',
+      //     desc:'温泉预售'
+      //   },
+      //   {
+      //     id:9520,
+      //     imgUrl:'https://pic5.40017.cn/02/001/6d/e2/rBLkCFmEG8eALBI8AAAEA1xXmqI793.png',
+      //     color:'pink',
+      //     desc:'自然风光'
+      //   },
+      // ]
     }
   }
 

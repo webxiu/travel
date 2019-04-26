@@ -9,7 +9,7 @@
   </div>
   <router-link to="/location">
     <div class="header-city" :class="[showCity]">
-      北京
+      {{city}}
     <span class="iconfont">&#xe65d;</span>
     </div>
   </router-link>
@@ -22,6 +22,7 @@
 // import '@/assets/style/iconfont.css'
 export default {
   name: 'homeHeader',
+  props:['city'],
   data(){
     return{
       showHeader:'',

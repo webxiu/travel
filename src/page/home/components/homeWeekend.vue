@@ -32,47 +32,50 @@
 <script>
 export default {
   name: 'homeWeekend',
+  props:{
+    weekendList:Array
+  },
   data(){
     return {
-      weekendList:[
-        {
-          id:"0001",
-          imgUrl:"https://pic5.40017.cn/02/000/33/66/rBLkCFs0Tr6AXiFPAABmgwDtp7o002_280x190_00.jpg",
-          desc:"拈花湾",
-          detail:"禅意假日 古韵风光"
+      // weekendList:[
+      //   {
+      //     id:"0001",
+      //     imgUrl:"https://pic5.40017.cn/02/000/33/66/rBLkCFs0Tr6AXiFPAABmgwDtp7o002_280x190_00.jpg",
+      //     desc:"拈花湾",
+      //     detail:"禅意假日 古韵风光"
 
-        },
-        {
-          id:"0002",
-          imgUrl:"https://pic5.40017.cn/01/000/00/9c/rBANC1vD9_GAb2qVAAD1zTnOfl0327_280x190_00.jpg",
-          desc:"迪士尼",
-          detail:"点亮心中奇梦"
-        },
-        {
-          id:"0003",
-          imgUrl:"https://pic5.40017.cn/01/001/f8/b2/rBLkBlsWe--AYOxAAABvztYw1fM559_280x190_00.jpg",
-          desc:"东方盐湖城 · 道天下",
-          detail:"茅山脚下的逍遥山镇"
-        },
-        {
-          id:"0004",
-          imgUrl:"https://pic5.40017.cn/02/000/f8/b9/rBLkCFsWfOSAKWiGAABRaPAf0aA516_280x190_00.jpg",
-          desc:"天目湖",
-          detail:" 肆意山水 古街温泉 "
-        },
-        {
-          id:"0005",
-          imgUrl:"https://pic5.40017.cn/01/001/f8/b2/rBLkBlsWe--AYOxAAABvztYw1fM559_280x190_00.jpg",
-          desc:"揭阳湖",
-          detail:"山水人间 肆意快活"
-        },
-        {
-          id:"0006",
-          imgUrl:"https://pic5.40017.cn/02/000/f8/b9/rBLkCFsWfOSAKWiGAABRaPAf0aA516_280x190_00.jpg",
-          desc:"天目湖",
-          detail:"竹海山水 温泉古街"
-        }
-      ],
+      //   },
+      //   {
+      //     id:"0002",
+      //     imgUrl:"https://pic5.40017.cn/01/000/00/9c/rBANC1vD9_GAb2qVAAD1zTnOfl0327_280x190_00.jpg",
+      //     desc:"迪士尼",
+      //     detail:"点亮心中奇梦"
+      //   },
+      //   {
+      //     id:"0003",
+      //     imgUrl:"https://pic5.40017.cn/01/001/f8/b2/rBLkBlsWe--AYOxAAABvztYw1fM559_280x190_00.jpg",
+      //     desc:"东方盐湖城 · 道天下",
+      //     detail:"茅山脚下的逍遥山镇"
+      //   },
+      //   {
+      //     id:"0004",
+      //     imgUrl:"https://pic5.40017.cn/02/000/f8/b9/rBLkCFsWfOSAKWiGAABRaPAf0aA516_280x190_00.jpg",
+      //     desc:"天目湖",
+      //     detail:" 肆意山水 古街温泉 "
+      //   },
+      //   {
+      //     id:"0005",
+      //     imgUrl:"https://pic5.40017.cn/01/001/f8/b2/rBLkBlsWe--AYOxAAABvztYw1fM559_280x190_00.jpg",
+      //     desc:"揭阳湖",
+      //     detail:"山水人间 肆意快活"
+      //   },
+      //   {
+      //     id:"0006",
+      //     imgUrl:"https://pic5.40017.cn/02/000/f8/b9/rBLkCFsWfOSAKWiGAABRaPAf0aA516_280x190_00.jpg",
+      //     desc:"天目湖",
+      //     detail:"竹海山水 温泉古街"
+      //   }
+      // ],
       swiperOption:{
         freeMode:true,
         spaceBetween:20,

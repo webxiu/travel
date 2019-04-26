@@ -55,36 +55,41 @@
 <script>
 export default {
   name: 'homeHot',
+  props:{
+    hotTrendList:Array,
+    hotPriceList:Array,
+    hotContentList:Array
+  },
   data(){
     return{
-      hotContentList:[
-        {
-          id:694,
-          imgUrl:'https://pic5.40017.cn/01/000/9d/d9/rBLkBlmSl26AACtXAALg8QhHckM352_100x100_00.jpg',
-          desc:'上海野生动物园成人票2张+上海浦东机场莎海国际酒店豪华双床房1晚'
-        },
-      ],
-      hotPriceList:[
-        {
-          id:594,
-          num:95,
-          price:9986
-        },
-      ],
-      hotTrendList:[
-        {
-          id:641,
-          desc:'温泉爆款',
-          crite:'又到一年温泉季',
-          imgUrl:'https://pic5.40017.cn/01/000/65/88/rBANC1usNjyAWsDJAACkawp55dU429_100x100_00.png',
-        },
-        {
-          id:601,
-          desc:'周末不涨价',
-          crite:'真的太划算',
-          imgUrl:'https://pic5.40017.cn/01/001/30/4e/rBLkBVvaYoWANDJ-AABpXE0IzGY734_100x100_00.png',
-        },
-      ]
+      // hotContentList:[
+      //   {
+      //     id:694,
+      //     imgUrl:'https://pic5.40017.cn/01/000/9d/d9/rBLkBlmSl26AACtXAALg8QhHckM352_100x100_00.jpg',
+      //     desc:'上海野生动物园成人票2张+上海浦东机场莎海国际酒店豪华双床房1晚'
+      //   },
+      // ],
+      // hotPriceList:[
+      //   {
+      //     id:594,
+      //     num:95,
+      //     price:9986
+      //   },
+      // ],
+      // hotTrendList:[
+      //   {
+      //     id:641,
+      //     desc:'温泉爆款',
+      //     crite:'又到一年温泉季',
+      //     imgUrl:'https://pic5.40017.cn/01/000/65/88/rBANC1usNjyAWsDJAACkawp55dU429_100x100_00.png',
+      //   },
+      //   {
+      //     id:601,
+      //     desc:'周末不涨价',
+      //     crite:'真的太划算',
+      //     imgUrl:'https://pic5.40017.cn/01/001/30/4e/rBLkBVvaYoWANDJ-AABpXE0IzGY734_100x100_00.png',
+      //   },
+      // ]
     }
   }
 
