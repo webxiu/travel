@@ -15,6 +15,9 @@ module.exports = {
   entry: {
     app: './src/main.js'
   },
+  externals:{//忽略的打包
+    "BMap":"BMap"
+  },
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',

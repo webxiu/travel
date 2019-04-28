@@ -3,7 +3,7 @@
     <div>
       <div class="present-area">
         <div class="present-title">当前</div>
-        <div class="present-button">正在获取位置信息</div>
+        <div class="present-button">{{this.city}}</div>
       </div>
       <div class="hot-area">
         <div class="hot-title">热门城市</div>
@@ -38,10 +38,12 @@
 
 <script>
 import BScroll from 'better-scroll'
+import BMap from 'BMap'
 export default {
   name:'locationList',
   data(){
     return{
+      city:'',
       hotCities:[
         {id:'0001',name:'北京0'},
         {id:'0002',name:'北京1'},
@@ -85,6 +87,18 @@ export default {
         easeTime:300  //毫秒
       }
     })
+
+    let map = new BMap.Map("allmap")
+    let myCity = new BMap.LocalCity()
+    myCity.get((result)=>{
+      console.log(result.name);
+      if (result) {
+        this.city = result.name
+      }else{
+        this.city = '获取位置信息失败'
+      }
+
+    });
   }
 }
 
