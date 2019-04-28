@@ -2,7 +2,7 @@
   <div class="list" ref="wrapper">
     <div>
       <div class="present-area">
-        <div class="present-title">当前</div>
+        <div class="present-title" ref="present">当前</div>
         <div class="present-button">{{this.city}}</div>
       </div>
       <div class="hot-area">
@@ -21,6 +21,7 @@
           class="alph-wrapper"
           v-for="(item,key) in cities"
           :key="key"
+          :ref="key"
           >
           <div class="alph-title">{{key}}</div>
           <div class="alph-list">
@@ -41,6 +42,24 @@ import BScroll from 'better-scroll'
 import BMap from 'BMap'
 export default {
   name:'locationList',
+  props:{
+    letterData:String
+  },
+  watch:{
+    letterData(){
+      // console.log(this.letterData)
+      const elementLetter = this.$refs[this.letterData]
+      const elementPresent = this.$refs.present
+      console.log(elementLetter)
+      console.log(elementPresent)
+      if (elementLetter) {
+          const element = elementLetter[0]
+          this.scroll.scrollToElement(element)
+      }else{
+          this.scroll.scrollToElement(elementPresent)
+      }
+    }
+  },
   data(){
     return{
       city:'',
@@ -54,7 +73,22 @@ export default {
       cities:{
         'A':[
           {id:'0041',name:'北京0'},
-          {id:'0001',name:'北京0'}
+          {id:'05001',name:'北京0'},
+          {id:'00301',name:'北京0'},
+          {id:'03001',name:'北京0'},
+          {id:'00701',name:'北京0'},
+          {id:'00501',name:'北京0'},
+          {id:'00801',name:'北京0'},
+          {id:'01201',name:'北京0'},
+          {id:'0681',name:'北京0'},
+          {id:'0068601',name:'北京0'},
+          {id:'0068501',name:'北京0'},
+          {id:'3535',name:'北京0'},
+          {id:'0068701',name:'北京0'},
+          {id:'001',name:'北京0'},
+          {id:'01',name:'北京0'},
+          {id:'063001',name:'北京0'},
+          {id:'780',name:'北京0'}
         ],
         'B':[
           {id:'0202',name:'南京'},
@@ -72,14 +106,23 @@ export default {
         ],
         'E':[
           {id:'00801',name:'北京9'},
-          {id:'0801',name:'北京9'}
+          {id:'115',name:'北京9'},
+          {id:'155166',name:'北京9'},
+          {id:'1686',name:'北京9'},
+          {id:'0565401',name:'北京9'},
+          {id:'0878601',name:'北京9'},
+          {id:'866',name:'北京9'},
+          {id:'085601',name:'北京9'},
+          {id:'68353',name:'北京9'},
+          {id:'3453',name:'北京9'},
+          {id:'5545',name:'北京9'}
         ],
       }
     }
   },
   mounted(){
     let wrapper = this.$refs.wrapper
-    const scroll = new BScroll(wrapper,{
+    this.scroll = new BScroll(wrapper,{
       click:true,
       mouseWheel:{    //随着滚轮滚动
         speed:20,
