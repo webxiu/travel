@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <div 
+    <div
       class="left"
       @click="handleBackClick"
     >
@@ -14,7 +14,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 export default {
     name:'detailHeader',
     methods:{
@@ -25,6 +24,8 @@ export default {
 
 }
 </script>
+
+
 <style lang="stylus" scoped>
 .header
   line-height:.88rem

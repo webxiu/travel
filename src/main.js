@@ -10,6 +10,9 @@ import '@/assets/style/reset.css'
 import 'swiper/dist/css/swiper.css'
 import '@/assets/style/iconfont.css'
 import fastClick from 'fastClick'
+import LyTab from 'ly-tab'
+
+Vue.use(LyTab)
 Vue.use(VueAwesomeSwiper, /* { default global options } */)
 
 Vue.config.productionTip = false
