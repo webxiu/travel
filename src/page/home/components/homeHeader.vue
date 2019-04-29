@@ -5,11 +5,12 @@
   </div>
   <div class="header-search" :class="[showSearch]">
     <span class="iconfont">&#xe688;</span>
-    上海海昌海洋公园
+    深圳会展中心
   </div>
   <router-link to="/location">
     <div class="header-city" :class="[showCity]">
-      {{city}}
+      <!-- {{city}} -->
+      {{this.$store.state.city}}
     <span class="iconfont">&#xe65d;</span>
     </div>
   </router-link>

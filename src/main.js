@@ -4,6 +4,7 @@ import Vue from 'vue'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import App from './App'
 import router from './router'
+import store from './store/store.js'
 import '@/assets/style/border.css'
 import '@/assets/style/reset.css'
 import 'swiper/dist/css/swiper.css'
@@ -17,6 +18,21 @@ fastClick.attach(document.body)
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
+  mounted(){
+    //获取真实定位地址
+    let map = new BMap.Map("allmap")
+    let myCity = new BMap.LocalCity()
+    myCity.get((result)=>{
+      console.log('当前定位地址:',result.name);
+      if (result) {
+        //存入vuex状态管理中
+        this.$store.state.city = result.name
+      }else{
+        this.$store.state.city = '北京'
+      }
+    });
+  }
 })

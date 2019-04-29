@@ -66,6 +66,10 @@ export default {
     }
   },
   methods:{
+    handleItemClick(city){
+      this.$store.dispatch('change',city)
+      this.$router.push('/')
+    },
     buttonClear(){
       this.keyword=' '
       this.flag='2'

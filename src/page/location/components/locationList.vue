@@ -3,7 +3,10 @@
     <div>
       <div class="present-area">
         <div class="present-title" ref="present">当前</div>
-        <div class="present-button">{{this.city}}</div>
+        <div
+          class="present-button"
+          @click="handlePresentClick"
+        >{{this.$store.state.city}}</div>
       </div>
       <div class="hot-area">
         <div class="hot-title">热门城市</div>
@@ -12,7 +15,7 @@
             class="hot-button"
             v-for="item in hotCities"
             :key="item.id"
-
+            @click="handleCurrentClick(item.name)"
           >{{item.name}}</div>
         </div>
       </div>
@@ -24,11 +27,13 @@
           :ref="key"
           >
           <div class="alph-title">{{key}}</div>
+          <!-- 城市列表 -->
           <div class="alph-list">
             <div
               class="alph-button"
               v-for="list in item"
               :key="list.id"
+              @click="handleAlphClick(list.name)"
               >{{list.name}}</div>
           </div>
         </div>
@@ -46,6 +51,24 @@ export default {
     letter:String,
     cities:Object,
     hotCities:Array
+  },
+  methods:{
+    // 热门城市
+    handleCurrentClick(city){
+      // 1.派发事件更改store数据状态
+      this.$store.dispatch('change',city)
+      // 2.回首页--编程式导航
+      this.$router.push('/')
+    },
+    // 城市列表
+    handleAlphClick(city){
+      this.$store.dispatch('change',city)
+      this.$router.push('/')
+    },
+    // 当前
+    handlePresentClick(){
+      this.$router.push('/')
+    },
   },
   watch:{
     letter(){
@@ -131,18 +154,18 @@ export default {
         easeTime:300  //毫秒
       }
     })
-
-    let map = new BMap.Map("allmap")
-    let myCity = new BMap.LocalCity()
-    myCity.get((result)=>{
-      console.log('当前定位地址:',result.name);
-      if (result) {
-        this.city = result.name
-      }else{
-        this.city = '获取位置信息失败'
-      }
-
-    });
+    //获取真实定位地址,已经放到main.js 全局中,这里可删除************
+    // let map = new BMap.Map("allmap")
+    // let myCity = new BMap.LocalCity()
+    // myCity.get((result)=>{
+    //   console.log('当前定位地址:',result.name);
+    //   if (result) {
+    //     this.city = result.name
+    //   }else{
+    //     this.city = '北京'
+    //   }
+    // });
+    //***** 这里可删除 end ******
   }
 }
 
