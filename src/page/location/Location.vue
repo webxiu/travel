@@ -1,6 +1,7 @@
 <template>
   <div class="location">
-    <location-header></location-header>
+    <div class="load" v-if="loading">加载中...</div>
+    <location-header :cities="cities"></location-header>
     <location-list
         :letter="letter"
         :cities="cities"
@@ -22,6 +23,7 @@ export default {
     name:'Loncation',
     data(){
         return{
+            loading:true,
             letter:'',
             cities:{},
             hotCities:[],
@@ -39,6 +41,7 @@ export default {
             const data = res.data.data
             // console.log(data)
             if (data) {
+                this.loading = false
                 this.cities = data.cities
                 this.hotCities = data.hotCities
                 this.alphabetList = data.alphabetList
@@ -57,6 +60,17 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
-
-
+.load
+  position:absolute
+  top:7rem
+  left:3.5rem
+  z-index:1011
+  width:1.8rem
+  height:.5rem
+  line-height:.5rem
+  border-radius:.1rem
+  opacity:.5
+  background:#000
+  color:#fff
+  text-align:center
 </style>
