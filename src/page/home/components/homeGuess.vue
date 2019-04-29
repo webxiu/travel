@@ -12,7 +12,7 @@
       v-for="item of guessList"
       :key="item.id"
       :to='"/detail/"+item.id'
-   >
+      >
       <div class="guess-content-img">
         <img :src="item.imgUrl">
         <div>{{item.rank}}</div>
