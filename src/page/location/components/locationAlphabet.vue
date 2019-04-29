@@ -20,42 +20,24 @@
 
 export default {
   name:'locationAlphabet',
+  props:{
+    alphabetList:Array
+  },
   data(){
     return{
       hidden:{
         display:'none'
       },
       content:'',
-      alphabetList:[
-        {id:'11',content:'当前'},
-        {id:'22',content:'热门'},
-        {id:'33',content:'A'},
-        {id:'44',content:'B'},
-        {id:'55',content:'C'},
-        {id:'70',content:'D'},
-        {id:'77',content:'E'},
-        {id:'88',content:'F'},
-        {id:'99',content:'G'},
-        {id:'12',content:'H'},
-        {id:'14',content:'I'},
-        {id:'15',content:'J'},
-        {id:'16',content:'K'},
-        {id:'17',content:'L'},
-        {id:'34',content:'M'},
-        {id:'63',content:'N'},
-        {id:'91',content:'O'},
-        {id:'83',content:'P'},
-        {id:'69',content:'Q'},
-        {id:'66',content:'R'},
-        {id:'87',content:'S'},
-        {id:'98',content:'T'},
-        {id:'67',content:'U'},
-        {id:'56',content:'V'},
-        {id:'51',content:'W'},
-        {id:'52',content:'X'},
-        {id:'53',content:'Y'},
-        {id:'54',content:'Z'}
-      ]
+      //测试数据
+      // alphabetList:[
+      //   {id:'11',content:'当前'},
+      //   {id:'22',content:'热门'},
+      //   {id:'33',content:'A'},
+      //   {id:'44',content:'B'},
+      //   {id:'55',content:'C'},
+      //   {id:'70',content:'D'},
+      // ]
     }
   },
   methods:{

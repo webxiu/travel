@@ -43,15 +43,15 @@ import BMap from 'BMap'
 export default {
   name:'locationList',
   props:{
-    letterData:String
+    letter:String,
+    cities:Object,
+    hotCities:Array
   },
   watch:{
-    letterData(){
-      // console.log(this.letterData)
-      const elementLetter = this.$refs[this.letterData]
+    letter(){
+      // console.log(this.letter)
+      const elementLetter = this.$refs[this.letter]
       const elementPresent = this.$refs.present
-      console.log(elementLetter)
-      console.log(elementPresent)
       if (elementLetter) {
           const element = elementLetter[0]
           this.scroll.scrollToElement(element)
@@ -63,61 +63,62 @@ export default {
   data(){
     return{
       city:'',
-      hotCities:[
-        {id:'0001',name:'北京0'},
-        {id:'0002',name:'北京1'},
-        {id:'0201',name:'北京2'},
-        {id:'0021',name:'北京3'},
-        {id:'0801',name:'北京9'}
-      ],
-      cities:{
-        'A':[
-          {id:'0041',name:'北京0'},
-          {id:'05001',name:'北京0'},
-          {id:'00301',name:'北京0'},
-          {id:'03001',name:'北京0'},
-          {id:'00701',name:'北京0'},
-          {id:'00501',name:'北京0'},
-          {id:'00801',name:'北京0'},
-          {id:'01201',name:'北京0'},
-          {id:'0681',name:'北京0'},
-          {id:'0068601',name:'北京0'},
-          {id:'0068501',name:'北京0'},
-          {id:'3535',name:'北京0'},
-          {id:'0068701',name:'北京0'},
-          {id:'001',name:'北京0'},
-          {id:'01',name:'北京0'},
-          {id:'063001',name:'北京0'},
-          {id:'780',name:'北京0'}
-        ],
-        'B':[
-          {id:'0202',name:'南京'},
-          {id:'002',name:'南京'},
-          {id:'02002',name:'南京'},
-          {id:'04002',name:'南京'}
-        ],
-        'C':[
-          {id:'02051',name:'北京2'},
-          {id:'0201',name:'北京2'}
-        ],
-        'D':[
-          {id:'0021',name:'北京3'},
-          {id:'00521',name:'北京3'}
-        ],
-        'E':[
-          {id:'00801',name:'北京9'},
-          {id:'115',name:'北京9'},
-          {id:'155166',name:'北京9'},
-          {id:'1686',name:'北京9'},
-          {id:'0565401',name:'北京9'},
-          {id:'0878601',name:'北京9'},
-          {id:'866',name:'北京9'},
-          {id:'085601',name:'北京9'},
-          {id:'68353',name:'北京9'},
-          {id:'3453',name:'北京9'},
-          {id:'5545',name:'北京9'}
-        ],
-      }
+      // 下面两组数据由axios请求获得从Location.vue父组件传到了props里使用了,这里仅测试用
+      // hotCities:[
+      //   {id:'0001',name:'北京0'},
+      //   {id:'0002',name:'北京1'},
+      //   {id:'0201',name:'北京2'},
+      //   {id:'0021',name:'北京3'},
+      //   {id:'0801',name:'北京9'}
+      // ],
+      // cities:{
+      //   'A':[
+      //     {id:'0041',name:'北京0'},
+      //     {id:'05001',name:'北京0'},
+      //     {id:'00301',name:'北京0'},
+      //     {id:'03001',name:'北京0'},
+      //     {id:'00701',name:'北京0'},
+      //     {id:'00501',name:'北京0'},
+      //     {id:'00801',name:'北京0'},
+      //     {id:'01201',name:'北京0'},
+      //     {id:'0681',name:'北京0'},
+      //     {id:'0068601',name:'北京0'},
+      //     {id:'0068501',name:'北京0'},
+      //     {id:'3535',name:'北京0'},
+      //     {id:'0068701',name:'北京0'},
+      //     {id:'001',name:'北京0'},
+      //     {id:'01',name:'北京0'},
+      //     {id:'063001',name:'北京0'},
+      //     {id:'780',name:'北京0'}
+      //   ],
+      //   'B':[
+      //     {id:'0202',name:'南京'},
+      //     {id:'002',name:'南京'},
+      //     {id:'02002',name:'南京'},
+      //     {id:'04002',name:'南京'}
+      //   ],
+      //   'C':[
+      //     {id:'02051',name:'北京2'},
+      //     {id:'0201',name:'北京2'}
+      //   ],
+      //   'D':[
+      //     {id:'0021',name:'北京3'},
+      //     {id:'00521',name:'北京3'}
+      //   ],
+      //   'E':[
+      //     {id:'00801',name:'北京9'},
+      //     {id:'115',name:'北京9'},
+      //     {id:'155166',name:'北京9'},
+      //     {id:'1686',name:'北京9'},
+      //     {id:'0565401',name:'北京9'},
+      //     {id:'0878601',name:'北京9'},
+      //     {id:'866',name:'北京9'},
+      //     {id:'085601',name:'北京9'},
+      //     {id:'68353',name:'北京9'},
+      //     {id:'3453',name:'北京9'},
+      //     {id:'5545',name:'北京9'}
+      //   ],
+      // }
     }
   },
   mounted(){
@@ -134,7 +135,7 @@ export default {
     let map = new BMap.Map("allmap")
     let myCity = new BMap.LocalCity()
     myCity.get((result)=>{
-      console.log(result.name);
+      console.log('当前定位地址:',result.name);
       if (result) {
         this.city = result.name
       }else{
