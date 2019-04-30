@@ -123,7 +123,7 @@ export default {
   color:#fff
   .galary-desc
     text-align:center
-    font-size:.3rem
+    font-size:.4rem
     padding:1.2rem
   .galary-img
     margin-top:2rem
